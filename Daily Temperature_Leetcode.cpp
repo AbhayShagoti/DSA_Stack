@@ -2,13 +2,13 @@ class Solution {
 public:
     vector<int> dailyTemperatures(vector<int>& temperatures)
     {
-        int i;
+        
         int len=temperatures.size();
 
       vector<int> answer(len,0);
         stack<int>stck;
 
-        for( i=0; i<len; i++)
+        for( auto i=0; i<len; i++)
         {
             while(!stck.empty() && temperatures[stck.top()]<temperatures[i])
             {
@@ -18,7 +18,7 @@ public:
             stck.push(i);
         }
 
-        for( i=0; i<len; i++)
+        for( auto i=0; i<len; i++)
         {
             cout<<answer[i]<<"";
         }
